@@ -1,21 +1,23 @@
+@keyframes draw-card {
+  0% {
+    transform: translateY(100%) scale(1.05);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-10%) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer utilities {
+  .animate-draw-card {
+    animation: draw-card 0.5s ease-out;
   }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
 }
